@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22/>" />
+    <title>Stream Deck icon preview</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #08090a;
+        color: #f5f5f7;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 48px 20px;
+        background:
+          radial-gradient(circle at 50% 20%, #25282d 0, transparent 38%),
+          #08090a;
+      }
+
+      main { width: min(940px, 100%); }
+
+      header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin: 0 18px 18px;
+      }
+
+      h1 { margin: 0; font-size: clamp(24px, 4vw, 38px); letter-spacing: -0.04em; }
+      p { margin: 0; color: #9da1a8; font-size: 14px; }
+
+      .deck {
+        position: relative;
+        display: grid;
+        aspect-ratio: 118 / 84;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+        column-gap: 3.4%;
+        row-gap: 4.05%;
+        padding: 10.25% 7.2%;
+        border: 1px solid #3b3d41;
+        border-radius: 7.4% / 10.4%;
+        background:
+          linear-gradient(155deg, #33363a 0%, #1a1c1f 8%, #0d0e10 50%, #050506 100%);
+        box-shadow:
+          inset 0 1px 1px #5d6065,
+          inset 0 0 0 3px #08090a,
+          inset 0 -14px 30px #000,
+          0 7px 0 #020203,
+          0 11px 0 #151619,
+          0 30px 90px #000b;
+      }
+
+      .deck::before {
+        position: absolute;
+        inset: 2.2%;
+        pointer-events: none;
+        border: 1px solid #ffffff09;
+        border-radius: 6.2% / 9%;
+        content: "";
+      }
+
+      .key {
+        min-width: 0;
+        aspect-ratio: 1;
+        overflow: hidden;
+        position: relative;
+        display: grid;
+        place-items: center;
+        padding: 0;
+        border: clamp(4px, .7vw, 8px) solid #050506;
+        border-radius: 21%;
+        background: #000;
+        box-shadow:
+          inset 0 0 0 1px #26282c,
+          inset 0 0 16px #ffffff0b,
+          0 3px 1px #313338,
+          0 7px 9px #000e;
+      }
+
+      .key img { display: block; width: 100%; height: 100%; }
+
+      .key span {
+        position: absolute;
+        left: 6px;
+        right: 6px;
+        bottom: 5px;
+        overflow: hidden;
+        color: #d8d8dc;
+        font-size: clamp(7px, 1.25vw, 12px);
+        font-weight: 600;
+        line-height: 1.1;
+        text-align: center;
+        text-overflow: ellipsis;
+        text-shadow: 0 1px 3px #000, 0 0 5px #000;
+        white-space: nowrap;
+      }
+
+      .key.empty::after {
+        width: 8%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: #17181a;
+        content: "";
+      }
+
+      @media (max-width: 560px) {
+        body { padding-inline: 10px; }
+        header { align-items: start; flex-direction: column; }
+        .key { border-width: 4px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Stream Deck icons</h1>
+        <p>15-key preview · 5 × 3 · 144 px assets</p>
+      </header>
+      <section class="deck" aria-label="Five by three Stream Deck preview">
+        <div class="key"><img src="/dist/svg/volume-down.svg" alt="Volume down" /><span>Volume down</span></div>
+        <div class="key"><img src="/dist/svg/volume-up.svg" alt="Volume up" /><span>Volume up</span></div>
+        <div class="key"><img src="/dist/svg/microphone.svg" alt="Microphone unmuted" /><span>Mic</span></div>
+        <div class="key"><img src="/dist/svg/microphone-muted.svg" alt="Microphone muted" /><span>Mic muted</span></div>
+        <div class="key"><img src="/dist/svg/audio.svg" alt="Audio unmuted" /><span>Audio</span></div>
+        <div class="key"><img src="/dist/svg/audio-muted.svg" alt="Audio muted" /><span>Audio muted</span></div>
+        <div class="key"><img src="/dist/svg/output-headphones.svg" alt="Headphones active, speaker inactive" /><span>Headphones</span></div>
+        <div class="key"><img src="/dist/svg/output-speaker.svg" alt="Speaker active, headphones inactive" /><span>Speaker</span></div>
+        <div class="key"><img src="/dist/svg/broadcast-off.svg" alt="Not broadcasting" /><span>Not live</span></div>
+        <div class="key"><img src="/dist/svg/broadcast-live.svg" alt="Broadcasting live" /><span>Live</span></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+# Dependencies and package-manager state
+node_modules/
+.pnpm-store/
+pnpm-debug.log*
+
+# Reproducible build output
+/dist/
+*.streamDeckIconPack
+
+# Local logs
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db

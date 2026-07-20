@@ -1,0 +1,25 @@
+{
+  "name": "streamdeck-icons",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.2",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "browser:install": "agent-browser install",
+    "build": "pnpm build:icons && node scripts/pack.mjs",
+    "build:icons": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "clean": "node scripts/clean.mjs",
+    "iconpack": "pnpm build",
+    "preview": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "@elgato/icons": "2.5.1",
+    "fflate": "0.8.3",
+    "sharp": "0.34.5"
+  },
+  "devDependencies": {
+    "agent-browser": "0.32.3"
+  }
+}

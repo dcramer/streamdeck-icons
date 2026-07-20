@@ -1,0 +1,68 @@
+{
+  "canvas": {
+    "size": 144,
+    "glyphSize": 84,
+    "background": "#000000",
+    "foreground": "#FFFFFF"
+  },
+  "icons": [
+    {
+      "name": "volume-down",
+      "layers": [
+        { "source": "elgato:volume1--filled", "size": 84, "x": 43, "y": 30 }
+      ]
+    },
+    {
+      "name": "volume-up",
+      "source": "elgato:volume--filled"
+    },
+    {
+      "name": "microphone",
+      "source": "elgato:microphone--filled"
+    },
+    {
+      "name": "microphone-muted",
+      "layers": [
+        { "source": "elgato:microphone--filled", "size": 84, "foreground": "#666666" },
+        { "source": "assets/mute-slash.svg", "size": 96, "x": 24, "y": 24, "foreground": "#FF3B30" }
+      ]
+    },
+    {
+      "name": "audio",
+      "layers": [
+        { "source": "elgato:volume0--filled", "size": 84, "x": 52, "y": 30 }
+      ]
+    },
+    {
+      "name": "audio-muted",
+      "layers": [
+        { "source": "elgato:volume0--filled", "size": 84, "x": 52, "y": 30, "foreground": "#666666" },
+        { "source": "assets/mute-slash.svg", "size": 96, "x": 24, "y": 24, "foreground": "#FF3B30" }
+      ]
+    },
+    {
+      "name": "output-headphones",
+      "layers": [
+        { "source": "elgato:speaker--filled", "size": 42, "x": 84, "y": 84, "foreground": "#666666" },
+        { "source": "elgato:headphones--filled", "size": 76, "x": 24, "y": 24 }
+      ]
+    },
+    {
+      "name": "output-speaker",
+      "layers": [
+        { "source": "elgato:headphones--filled", "size": 42, "x": 84, "y": 84, "foreground": "#666666" },
+        { "source": "elgato:speaker--filled", "size": 76, "x": 24, "y": 24 }
+      ]
+    },
+    {
+      "name": "broadcast-off",
+      "source": "elgato:stream-off--filled",
+      "foreground": "#666666"
+    },
+    {
+      "name": "broadcast-live",
+      "source": "elgato:stream--filled",
+      "foreground": "#7CFF00"
+    }
+  ]
+}

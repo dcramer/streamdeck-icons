@@ -1,0 +1,10 @@
+{
+  "id": "com.dcramer.streamdeckicons",
+  "name": "Cramer's Stream Deck Icons",
+  "version": "0.1.0",
+  "description": "A collection of my favorite icons for Stream Deck.",
+  "author": "David Cramer",
+  "url": "https://github.com/dcramer/streamdeck-icons",
+  "icon": "volume-up",
+  "license": "Apache-2.0"
+}
