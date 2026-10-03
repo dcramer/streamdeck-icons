@@ -68,10 +68,10 @@ Use `pnpm exec agent-browser` for every browser command. Do not use `npx` or ass
 
 Check the deck at its rendered key size, not only enlarged assets.
 
-- **Completeness:** Every intended icon appears once, no image is broken, labels and alt text match the represented action/state, and five unused keys remain visibly empty for the current ten-icon set.
+- **Completeness:** Every intended icon appears once, no image is broken, labels and alt text match the represented action/state, and three unused keys remain visibly empty for the current twelve-icon set.
 - **Optical alignment:** Filled glyphs have consistent apparent scale and breathing room. They look centered by visible bounds; volume glyph offsets compensate for sound-wave whitespace. Nothing clips or crowds the key edge.
-- **Pair consistency:** `microphone`/`microphone-muted` and `audio`/`audio-muted` retain the same base glyph size and position. Muted variants use a dim gray base plus the same red diagonal slash.
-- **State semantics:** Active audio glyphs are filled white. Inactive glyphs use `#666666`. Broadcast off is dim; broadcast live is lime. White or accent color is not used accidentally for inactive states.
+- **Pair consistency:** `microphone`/`microphone-muted` and `audio`/`audio-muted` retain the same base glyph size and position. Muted variants use a dim gray base plus the same red diagonal slash. `light-off`/`light-on` share the same bulb size and position; only the on state adds rays.
+- **State semantics:** Active audio glyphs are filled white. Inactive glyphs use `#666666`. Broadcast off is dim; broadcast live is lime. Light off is a gray bulb; light on is a white bulb with rays. White or accent color is not used accidentally for inactive states.
 - **Output devices:** The active filled device is large at top-left; the inactive filled device is smaller, gray, behind it at bottom-right. The two states swap prominence without changing the composition.
 - **Shape and legibility:** Sources look filled unless an explicit `allowOutline` exception exists. Silhouettes remain distinguishable at physical-key scale; fine detail does not disappear.
 - **Deck layout:** The preview remains a 5 x 3 grid with square keys, even gaps, intact rounded corners, and no overlap or overflow at desktop and narrow widths. Labels stay readable and do not obscure glyphs.

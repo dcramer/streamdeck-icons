@@ -22,6 +22,7 @@
 - Center icons by their visible glyph bounds; some Elgato volume SVGs reserve empty space for sound waves and need an explicit horizontal offset.
 - Use the centered filled no-wave volume glyph for audio mute states so they remain distinct from volume controls.
 - For output-device states, place the large active device at top-left and the small dimmed inactive device behind it at bottom-right; use filled device glyphs.
+- For on/off device states such as lights, reuse one base glyph at the same size and position: gray alone when off, white with an added activity layer (rays) when on.
 - Keep paired state names explicit, such as `microphone` and `microphone-muted`.
 - Put original 24 × 24 SVG glyphs in `src/icons/` and use `currentColor` for themeable paths.
 - Do not edit `dist/`; regenerate it with `pnpm build`.

@@ -63,6 +63,19 @@
       "name": "broadcast-live",
       "source": "elgato:stream--filled",
       "foreground": "#7CFF00"
+    },
+    {
+      "name": "light-off",
+      "layers": [
+        { "source": "src/icons/light-bulb.svg", "size": 84, "foreground": "#666666" }
+      ]
+    },
+    {
+      "name": "light-on",
+      "layers": [
+        { "source": "src/icons/light-bulb.svg", "size": 84 },
+        { "source": "src/icons/light-rays.svg", "size": 84 }
+      ]
     }
   ]
 }

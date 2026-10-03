@@ -25,7 +25,7 @@ The ready-to-use files are written to `dist/png/` and `dist/svg/`. For ordinary 
 
 `pnpm browser:install` installs the Chromium build used by the repo-local `agent-browser` dependency. Agents can use the project-local `icons-qa` skill to build the assets, launch the preview, and inspect the deck at desktop and narrow viewports.
 
-The starter set contains volume down/up, microphone on/muted, audio on/muted, headphones/speaker output states, and broadcast off/live. Active audio states are white, inactive states are gray, muted states use a shared red diagonal slash, and live broadcast uses a vivid lime glyph.
+The starter set contains volume down/up, microphone on/muted, audio on/muted, headphones/speaker output states, broadcast off/live, and light off/on. Active audio states are white, inactive states are gray, muted states use a shared red diagonal slash, and live broadcast uses a vivid lime glyph. The light pair shares one original bulb glyph from `src/icons/`: gray when off, white with rays when on.
 
 ## Build the icon library
 
