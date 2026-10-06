@@ -7,7 +7,7 @@
 | `AGENTS.md` | Repository authority, high confidence | Commands and icon conventions | Keep runtime rules aligned |
 | `README.md` | Repository authority, high confidence | Setup, preview URL, output layout | May lag implementation; cross-check scripts |
 | `config/icons.json` | Runtime source, high confidence | Icon names, palette, layers, sizes, offsets | Read on every QA run |
-| `preview/index.html` | Runtime source, high confidence | 5 x 3 structure, labels, responsive layout | Current preview is intentionally static |
+| `preview/index.html` | Runtime source, high confidence | 5 x 3 structure, alt text, responsive layout | Current preview is intentionally static |
 | `scripts/build.mjs`, `scripts/check.mjs`, `scripts/serve.mjs` | Runtime source, high confidence | Build, stale-asset validation, server behavior | Use commands rather than duplicating implementation |
 | `agent-browser` 0.32.3 `core` guidance | Upstream primary source, high confidence | Local CLI, snapshot, screenshot, session, wait, cleanup workflow | Loaded from the pinned CLI to avoid stale copied reference material |
 | `agent-browser` 0.32.3 `dogfood` guidance and issue taxonomy | Upstream primary source, high confidence | Repro-first visual, console, responsive, accessibility checks | Adapted to a static local preview; video and broad app exploration omitted |

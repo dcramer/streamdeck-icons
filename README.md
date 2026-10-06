@@ -50,6 +50,53 @@ Stream Deck does not reliably replace a sideloaded icon pack that has the same I
 3. Reopen Stream Deck.
 4. Double-click `dist/com.dcramer.streamdeckicons.streamDeckIconPack`.
 
+## Put icons on keys
+
+Icons are designed to be used without a title: the glyph alone carries the meaning, so turn the key's title off in Stream Deck (the **T** menu next to the title field, "Show Title"). The preview shows keys without labels for the same reason.
+
+Assigning an icon in the Stream Deck app is the normal route. The steps below do the same thing by editing the profile on disk, which is how an agent can update the deck.
+
+### Where things live
+
+All paths are under the Stream Deck data directory: `%AppData%\Elgato\StreamDeck\` on Windows (from WSL, `/mnt/c/Users/<user>/AppData/Roaming/Elgato/StreamDeck/`), or `~/Library/Application Support/com.elgato.StreamDeck/` on macOS.
+
+| Path | Contents |
+|---|---|
+| `IconPacks/com.dcramer.streamdeckicons.sdIconPack/` | The installed pack, replaced by `pnpm pack:install` |
+| `ProfilesV3/<id>.sdProfile/Profiles/<page-id>/manifest.json` | One page of keys, as compact single-line JSON |
+| `ProfilesV3/<id>.sdProfile/Profiles/<page-id>/Images/` | That page's key images |
+| `Plugins/<plugin-id>.sdPlugin/` | Installed plugins and the images they draw themselves |
+
+In a page manifest, `Controllers[0].Actions` is keyed by `"column,row"` from the top-left, so `"2,0"` is the third key of the top row. Each action has a `States` list; a state's `Image` is a path such as `Images/<name>.png`, and `ShowTitle: false` hides its title. Find a key by its plugin `UUID` and `Settings` (an entity ID, a device ID) rather than by position.
+
+### Change a key's icon
+
+1. Quit Stream Deck. It rewrites profiles from memory when it exits, so edits made while it runs are lost. On Windows it ignores a polite close and has to be force-quit: note the path of the running `StreamDeck.exe`, then `taskkill.exe /F /IM StreamDeck.exe`.
+2. Copy the page's `manifest.json` somewhere safe.
+3. Copy the icon from `dist/png/` into the page's `Images/` folder under a new name: 26 random characters from `A-Z0-9` followed by `Z`, plus `.png`. Stream Deck copies an icon into the profile when it is assigned, so keys never point at the pack.
+4. Set each state's `Image` to the new file and `ShowTitle` to `false`. For a two-state key, state 0 is off or inactive and state 1 is on or active; open the key's current images to confirm before replacing them. Write the manifest back as compact JSON (`separators=(",", ":")`, no ASCII escaping).
+5. Start `StreamDeck.exe` again and read the manifest back to confirm the change survived the launch.
+
+From WSL, run `taskkill.exe`, `tasklist.exe`, and `powershell.exe` from a Windows directory such as `/mnt/c`; they reject a WSL working directory.
+
+### Keys whose plugin draws its own image
+
+Check how many entries a key's action has under `States` in the plugin's `manifest.json`. A two-state action takes an off and an on icon as above. A single-state action that still shows state is drawing the image itself, and a custom icon on that key would freeze it. Search the plugin's code for `setImage` to see which of its own files it uses, and replace those files instead, keeping the originals beside them as `*.orig.png`. A plugin update restores the stock images, so repeat the swap after updating.
+
+The amaran Controller's On/Off key works this way. Its images are in `Plugins/com.amarancreators.controller.sdPlugin/imgs/plugin/`:
+
+| Plugin file | Replace with |
+|---|---|
+| `power.png` (72 px), `power@2x.png` (144 px) | `panel-light-on` |
+| `power-off.png` (72 px), `power-off@2x.png` (144 px) | `panel-light-off` |
+
+### Current key assignments
+
+| Key | Plugin action | Icons |
+|---|---|---|
+| Amaran Pano 120c on/off | amaran Controller On/Off (`com.amarancreators.controller.switch`) | `panel-light-off` / `panel-light-on`, through the plugin image swap |
+| Office recessed can lights | Home Assistant dual-state entity, `light.office_office_recessed` | `ceiling-light-off` / `ceiling-light-on` |
+
 The repository uses the conventional `LICENSE` filename. The generated pack includes the same text as `license.txt` because that is the filename expected by Elgato's documented icon-pack layout.
 
 ## Add an icon

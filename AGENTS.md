@@ -24,6 +24,7 @@
 - Use the centered filled no-wave volume glyph for audio mute states so they remain distinct from volume controls.
 - For output-device states, place the large active device at top-left and the small dimmed inactive device behind it at bottom-right; use filled device glyphs.
 - For on/off device states such as lights, reuse one base glyph at the same size and position: gray alone when off, white with an added activity layer (rays) when on.
+- Design icons to read without a title; keys on the deck have titles turned off and the preview shows no labels.
 - Keep paired state names explicit, such as `microphone` and `microphone-muted`.
 - Put original 24 × 24 SVG glyphs in `src/icons/` and use `currentColor` for themeable paths.
 - Do not edit `dist/`; regenerate it with `pnpm build`.
@@ -36,3 +37,11 @@
 | Setup, source format, and layout | `README.md` |
 | Icon definitions and palette | `config/icons.json` |
 | Icon-library metadata | `config/pack.json` |
+| Installing the pack, editing key icons in a Stream Deck profile, plugin-drawn keys, current key assignments | `README.md`, "Update the installed pack" and "Put icons on keys" |
+
+## Updating the Physical Deck
+
+- "Update my Stream Deck" means two things: install the pack with `pnpm pack:install`, then put any new or changed icons on the keys that use them. Installing the pack alone does not change existing keys.
+- Follow the `README.md` procedure for profile edits: quit Stream Deck first, back up the page manifest, add images under new names, set `ShowTitle` to `false`, relaunch, and read the manifest back.
+- Ask before replacing files inside a third-party plugin, and keep the originals as `*.orig.png`.
+- Only change the keys the request is about; leave other keys' images and titles alone.

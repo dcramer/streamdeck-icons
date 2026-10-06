@@ -68,14 +68,14 @@ Use `pnpm exec agent-browser` for every browser command. Do not use `npx` or ass
 
 Check the deck at its rendered key size, not only enlarged assets.
 
-- **Completeness:** Every intended icon appears once, no image is broken, labels and alt text match the represented action/state, and fourteen unused keys remain visibly empty for the current sixteen-icon set (five on the audio and broadcast page, nine on the lights page).
+- **Completeness:** Every intended icon appears once, no image is broken, alt text matches the represented action/state, keys carry no text labels, and fourteen unused keys remain visibly empty for the current sixteen-icon set (five on the audio and broadcast page, nine on the lights page).
 - **Optical alignment:** Filled glyphs have consistent apparent scale and breathing room. They look centered by visible bounds; volume glyph offsets compensate for sound-wave whitespace. Nothing clips or crowds the key edge.
 - **Pair consistency:** `microphone`/`microphone-muted` and `audio`/`audio-muted` retain the same base glyph size and position. Muted variants use a dim gray base plus the same red diagonal slash. `light-off`/`light-on` share the same bulb size and position, `panel-light-off`/`panel-light-on` share the same panel size and position, and `ceiling-light-off`/`ceiling-light-on` share the same fixture size and position; only the on states add rays.
 - **State semantics:** Active audio glyphs are filled white. Inactive glyphs use `#666666`. Broadcast off is dim; broadcast live is lime. Light off is a gray bulb; light on is a white bulb with rays. Panel light off is a gray gridded panel; panel light on is the same panel in white with rays. Ceiling light off is a gray can downlight; ceiling light on is the same fixture in white with rays below. White or accent color is not used accidentally for inactive states.
 - **Output devices:** The active filled device is large at top-left; the inactive filled device is smaller, gray, behind it at bottom-right. The two states swap prominence without changing the composition.
 - **Shape and legibility:** Sources look filled unless an explicit `allowOutline` exception exists. Silhouettes remain distinguishable at physical-key scale; fine detail does not disappear.
-- **Deck layout:** Each preview page remains a 5 x 3 grid with square keys, even gaps, intact rounded corners, and no overlap or overflow at desktop and narrow widths. Labels stay readable and do not obscure glyphs.
-- **Rendering and accessibility:** Backgrounds are black, expected colors have sufficient contrast, no browser errors appear, and the full snapshot exposes meaningful image alt text plus labels for empty keys and the deck region.
+- **Deck layout:** Each preview page remains a 5 x 3 grid with square keys, even gaps, intact rounded corners, and no overlap or overflow at desktop and narrow widths.
+- **Rendering and accessibility:** Backgrounds are black, expected colors have sufficient contrast, no browser errors appear, and the full snapshot exposes meaningful image alt text plus accessible names for empty keys and the deck regions.
 
 ## Findings Contract
 
