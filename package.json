@@ -12,6 +12,7 @@
     "check": "node scripts/check.mjs",
     "clean": "node scripts/clean.mjs",
     "iconpack": "pnpm build",
+    "pack:install": "pnpm build && pnpm check && node scripts/install.mjs",
     "preview": "node scripts/serve.mjs"
   },
   "dependencies": {

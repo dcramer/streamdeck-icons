@@ -61,6 +61,8 @@
           0 30px 90px #000b;
       }
 
+      .deck + .deck { margin-top: 48px; }
+
       .deck::before {
         position: absolute;
         inset: 2.2%;
@@ -125,9 +127,9 @@
     <main>
       <header>
         <h1>Stream Deck icons</h1>
-        <p>15-key preview · 5 × 3 · 144 px assets</p>
+        <p>15-key preview · 5 × 3 · 2 pages · 144 px assets</p>
       </header>
-      <section class="deck" aria-label="Five by three Stream Deck preview">
+      <section class="deck" aria-label="Five by three Stream Deck preview, audio and broadcast page">
         <div class="key"><img src="/dist/svg/volume-down.svg" alt="Volume down" /><span>Volume down</span></div>
         <div class="key"><img src="/dist/svg/volume-up.svg" alt="Volume up" /><span>Volume up</span></div>
         <div class="key"><img src="/dist/svg/microphone.svg" alt="Microphone unmuted" /><span>Mic</span></div>
@@ -138,8 +140,25 @@
         <div class="key"><img src="/dist/svg/output-speaker.svg" alt="Speaker active, headphones inactive" /><span>Speaker</span></div>
         <div class="key"><img src="/dist/svg/broadcast-off.svg" alt="Not broadcasting" /><span>Not live</span></div>
         <div class="key"><img src="/dist/svg/broadcast-live.svg" alt="Broadcasting live" /><span>Live</span></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+      </section>
+      <section class="deck" aria-label="Five by three Stream Deck preview, lights page">
         <div class="key"><img src="/dist/svg/light-off.svg" alt="Light off" /><span>Light off</span></div>
         <div class="key"><img src="/dist/svg/light-on.svg" alt="Light on" /><span>Light on</span></div>
+        <div class="key"><img src="/dist/svg/panel-light-off.svg" alt="Panel light off" /><span>Panel off</span></div>
+        <div class="key"><img src="/dist/svg/panel-light-on.svg" alt="Panel light on" /><span>Panel on</span></div>
+        <div class="key"><img src="/dist/svg/ceiling-light-off.svg" alt="Ceiling lights off" /><span>Ceiling off</span></div>
+        <div class="key"><img src="/dist/svg/ceiling-light-on.svg" alt="Ceiling lights on" /><span>Ceiling on</span></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
+        <div class="key empty" aria-label="Empty key"></div>
         <div class="key empty" aria-label="Empty key"></div>
         <div class="key empty" aria-label="Empty key"></div>
         <div class="key empty" aria-label="Empty key"></div>

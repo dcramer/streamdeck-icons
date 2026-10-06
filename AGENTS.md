@@ -9,6 +9,7 @@
 | Build SVG, PNG, and installable icon pack | `pnpm build` |
 | Build only SVG and PNG icons | `pnpm build:icons` |
 | Validate sources and generated assets | `pnpm check` |
+| Build, validate, and install the pack into Stream Deck (restarts the app) | `pnpm pack:install` |
 | Preview the 5 × 3 deck | `pnpm dev` |
 | Run visual icon QA | Use the local `icons-qa` skill |
 

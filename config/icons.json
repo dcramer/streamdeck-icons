@@ -76,6 +76,32 @@
         { "source": "src/icons/light-bulb.svg", "size": 84 },
         { "source": "src/icons/light-rays.svg", "size": 84 }
       ]
+    },
+    {
+      "name": "panel-light-off",
+      "layers": [
+        { "source": "src/icons/panel-light.svg", "size": 84, "foreground": "#666666" }
+      ]
+    },
+    {
+      "name": "panel-light-on",
+      "layers": [
+        { "source": "src/icons/panel-light.svg", "size": 84 },
+        { "source": "src/icons/panel-light-rays.svg", "size": 84 }
+      ]
+    },
+    {
+      "name": "ceiling-light-off",
+      "layers": [
+        { "source": "src/icons/ceiling-light.svg", "size": 84, "foreground": "#666666" }
+      ]
+    },
+    {
+      "name": "ceiling-light-on",
+      "layers": [
+        { "source": "src/icons/ceiling-light.svg", "size": 84 },
+        { "source": "src/icons/ceiling-light-rays.svg", "size": 84 }
+      ]
     }
   ]
 }

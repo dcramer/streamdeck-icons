@@ -21,19 +21,27 @@ pnpm check
 pnpm dev
 ```
 
-The ready-to-use files are written to `dist/png/` and `dist/svg/`. For ordinary custom key imports, use the 144 px PNG files. Stream Deck will scale one square image for different devices. `pnpm dev` opens the preview at `http://127.0.0.1:4173` and emulates the requested 5 × 3 device.
+The ready-to-use files are written to `dist/png/` and `dist/svg/`. For ordinary custom key imports, use the 144 px PNG files. Stream Deck will scale one square image for different devices. `pnpm dev` opens the preview at `http://127.0.0.1:4173` and emulates the requested 5 × 3 device as two pages: audio and broadcast, then lights.
 
 `pnpm browser:install` installs the Chromium build used by the repo-local `agent-browser` dependency. Agents can use the project-local `icons-qa` skill to build the assets, launch the preview, and inspect the deck at desktop and narrow viewports.
 
-The starter set contains volume down/up, microphone on/muted, audio on/muted, headphones/speaker output states, broadcast off/live, and light off/on. Active audio states are white, inactive states are gray, muted states use a shared red diagonal slash, and live broadcast uses a vivid lime glyph. The light pair shares one original bulb glyph from `src/icons/`: gray when off, white with rays when on.
+The starter set contains volume down/up, microphone on/muted, audio on/muted, headphones/speaker output states, broadcast off/live, light off/on, panel light off/on, and ceiling light off/on. Active audio states are white, inactive states are gray, muted states use a shared red diagonal slash, and live broadcast uses a vivid lime glyph. The light, panel-light, and ceiling-light pairs each share one original glyph from `src/icons/` (a bulb, a rectangular LED panel with a softbox grid, and a recessed can downlight): gray when off, white with rays when on.
 
 ## Build the icon library
 
 `pnpm build` renders the SVG and PNG icons, generates the Stream Deck manifest and searchable icon metadata, and writes `dist/com.dcramer.streamdeckicons.streamDeckIconPack`. Double-click that file to install the pack in Stream Deck. Edit `config/pack.json` to change the pack name, version, author, URL, thumbnail icon, or license. Use `pnpm build:icons` only when you want the loose assets without repackaging the library.
 
-### Update a sideloaded pack
+### Update the installed pack
 
-Stream Deck does not reliably replace a sideloaded icon pack that has the same ID. To install a new local build:
+```sh
+pnpm pack:install
+```
+
+This rebuilds and validates the icons, quits Stream Deck, replaces the `com.dcramer.streamdeckicons.sdIconPack` folder in the Stream Deck icon-pack directory with the new build, and reopens Stream Deck if it was running. It works on macOS, on Windows, and from WSL against the Windows install. Only this pack's folder is touched.
+
+Keys that already use one of these icons keep the image they were assigned; pick the icon again from the library to pick up a changed design.
+
+Stream Deck does not reliably replace a sideloaded icon pack that has the same ID, which is why the script swaps the folder while the app is closed. To do the same by hand:
 
 1. Fully quit Stream Deck from the menu bar or system tray.
 2. Remove only the `com.dcramer.streamdeckicons.sdIconPack` folder from the appropriate icon-pack directory:
